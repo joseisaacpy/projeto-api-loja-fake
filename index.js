@@ -29,11 +29,24 @@ async function getData() {
       itemElement.setAttribute("data-aos", "fade-up");
 
       // Cria estrutura do card
+      // itemElement.innerHTML = `
+      //   <img src="${item.image}"/>
+      //   <h2>${item.title}</h2>
+      //   <p>${item.price}</p>
+      //   <p>${item.description}</p>
+      //   <a href="https://api.whatsapp.com/send?phone=5586995177653&text=Ol%C3%A1,%20estou%20interessado(a)%20no%20produto%20[NOME_DO_PRODUTO].%20Poderia%20me%20dar%20mais%20informa%C3%A7%C3%B5es?" target="_blank">Comprar <i class="fa-solid fa-cart-shopping"></i></a>`;
       itemElement.innerHTML = `
-        <img src="${item.image}"/>
-        <h2>${item.title}</h2>
-        <p>${item.price}</p>
-        <p>${item.description}</p>`;
+      <figure>
+        <img src="${item.image}" alt="${item.title}"/>
+      </figure>
+      <h2>${item.title}</h2>
+      <p class="description">${item.description}</p>
+      <p class="price"><strong>R$ ${item.price.toFixed(2)}</strong></p>
+   <a href="https://api.whatsapp.com/send?phone=558695816051&text=Ol%C3%A1%2C%20tenho%20interesse%20nos%20produtos!" target="_blank">
+  Comprar <i class="fa-solid fa-cart-shopping"></i>
+</a>
+
+    `;
 
       // Adiciona o item ao container
       containerElement.appendChild(itemElement);
